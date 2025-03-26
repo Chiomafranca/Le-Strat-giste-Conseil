@@ -1,0 +1,16 @@
+
+@media (min-width: 1200px) {
+  .custom-img {
+    width: 30% !important; 
+    max-width: 450px;
+    height: auto;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .custom-img {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}

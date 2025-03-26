@@ -1,0 +1,16 @@
+
+.navbar-light.bg-dark {
+  background-color: #343a40 !important;  
+}
+
+
+@media (max-width: 768px) {
+  .navbar-light.bg-dark {
+      background-color: rgba(52, 58, 64, 0.4) !important;  
+  }
+
+  
+  .navbar-light .navbar-nav .nav-link {
+      color: white !important;
+  }
+}
