@@ -13,6 +13,7 @@
   flex-direction: column; 
 }
 
+
 /* Ensure text does not get cut off */
 .card-body {
   flex-grow: 1; 

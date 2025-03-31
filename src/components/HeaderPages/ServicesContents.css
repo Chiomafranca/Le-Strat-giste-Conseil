@@ -1,6 +1,6 @@
-/* Services Section Styling */
 .services-section {
-  background: linear-gradient(to right, #0d6efd, #6610f2);
+  background: linear-gradient(to right, #0A1F44, #153D6F, #1E5A99);
+ background: "linear-gradient(to right, #A275B0, #7FB193, #B0B0B2)";
   margin-top: 3px;
 }
 
@@ -18,6 +18,8 @@
 
 /* Service Cards Styling */
 .service-card {
+  background: linear-gradient(to right, #001F3F, #002855, #003366);
+ /* Light Purple, Green, Gray */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;

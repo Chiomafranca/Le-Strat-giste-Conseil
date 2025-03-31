@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import OurSolutions from './components/Navbar/OurSolutions';
-import VidoeBackGround from './components/Header/HeaderNav/VidoeBackGround';
+import ImageBackGround from './components/Header/HeaderNav/ImageBackGround';
 import Services from './components/HeaderPages/Services';
 import About from './components/HeaderPages/About';
 import Contact from './components/HeaderPages/Contact';
-import Home from './components/HeaderPages/Home';
+// import Home from './components/HeaderPages/Home';
 import Footer from './components/FooterFoot/Footer';
 import Tooltip from './components/Tooltip/Tooltip';
 import { LanguageProvider } from './components/SetLanguage/LanguageContext';  
@@ -26,8 +26,8 @@ function App() {
         <Navbar />
         <Routes>
           {/* Define your routes */}
-          <Route path="/" element={<VidoeBackGround />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<ImageBackGround />} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/solutions" element={<OurSolutions />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />

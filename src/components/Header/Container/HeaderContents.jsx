@@ -7,6 +7,7 @@ import "./HeaderContents.css";
 import icon1 from '../../HeaderPages/images/icon1.png';
 import icon2 from '../../HeaderPages/images/icon2.png';
 import icon3 from '../../HeaderPages/images/icon3.png';
+import pic10 from '../../HeaderPages/images/pic10.webp';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // AOS animations
 import ContactForm from '../../Header/Container/ContactForm'
@@ -31,6 +32,30 @@ const HeaderContents = () => {
     }
   };
 
+  const cards = [
+    {
+      icon: icon1,
+      titleEn: "Global Optimization",
+      titleFr: "Optimisation Globale",
+      textEn: "Ensure transparency and efficiency across your operations with expertise in process management, department coordination, and optimization of your business functions.",
+      textFr: "Assurez la transparence et l'efficacité de vos opérations grâce à une expertise en gestion des processus, coordination des départements et optimisation des fonctions de votre entreprise."
+    },
+    {
+      icon: icon2,
+      titleEn: "Financial Accounting and Bookkeeping",
+      titleFr: "Comptabilité Financière et Tenue de Livres",
+      textEn: "We offer two financial management solutions: fully outsourced accounting or a custom in-house system, managing your transactions, financial statements, and compliance.",
+      textFr: "Nous proposons deux solutions de gestion financière : une comptabilité entièrement externalisée ou un système interne personnalisé, gérant vos transactions, états financiers et conformité."
+    },
+    {
+      icon: icon3,
+      titleEn: "Inventory Management and Costing",
+      titleFr: "Gestion des Stocks et Évaluation des Coûts",
+      textEn: "Adopt high-performance solutions for efficient inventory valuation and accurate cost assessment, contributing to optimized management accounting.",
+      textFr: "Adoptez des solutions performantes pour une évaluation efficace des stocks et une estimation précise des coûts, contribuant à une comptabilité de gestion optimisée."
+    }
+  ];
+
   const { title, description, buttonText, additionalInfo1, additionalInfo2 } = content[language];
 
   // Initialize AOS (Animate on Scroll)
@@ -43,96 +68,144 @@ const HeaderContents = () => {
     
 
       {/* Hero Section */}
-      <div className="row align-items-center mb-5">
-  <div className="col-md-6 ms-auto text-center text-md-left">
-    <h1 className="display-4 fw-bold mb-4">{title}</h1>
-    <p className="lead mb-4">{description}</p>
-    <Link to="/solutions" className="btn btn-primary btn-lg">
-      {buttonText}
-    </Link>
-  </div>
-
-  <div className="col-md-6 me-auto text-center">
-    <img
-      src={pic}
-      alt="Rénovation"
-      className="img-fluid shadow-lg"
-      style={{ maxHeight: "350px", objectFit: "cover" }}
-    />
-  </div>
-</div>
-
-
-      {/* Additional Information Sections */}
-    
-      {/* Blog Section */}
-      <div className="text-center mb-5 blog-card">
-  <h2
-    className="text-center py-3 mb-4 fs-3 fs-sm-2 fs-md-7"
-    style={{
-      background: "linear-gradient(90deg, #007bff, #6610f2)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      fontWeight: "bold",
-      
-    }}
-  >
-    {language === "en"
-      ? "Get to know us better through posts about our work, our passions, and our culture."
-      : "Apprenez à mieux nous connaître à travers des articles sur notre travail, nos passions et notre culture."}
-  </h2>
-
-  <div className="d-flex flex-wrap justify-content-between mt-4 border-top border-bottom py-3">
-    <div className="px-3 col-12 col-md-4 mb-4">
-      <div className="border-end text-start card-sm" data-aos="zoom-in">
-        <h4>{language === "en" ? "When in doubt, improvise" : "En cas de doute, improvisez"}</h4>
-        <p>
-          {language === "en"
-            ? "When in doubt, improvise. Kivilcim Gunay | 07/20/2022. Plan, prepare, practice. Three Ps leading to success in a world where we could always know how things will play out ahead of time. But reality is different. Sometimes, even the best plans fail. Improvisation is not just an escape—it’s a skill. It allows businesses to react quickly, seize unexpected opportunities, and pivot when necessary. Companies that embrace adaptability often thrive in dynamic environments."
-            : "En cas de doute, improvisez. Kivilcim Gunay | 20/07/2022. Planifier, préparer, pratiquer. Trois P qui mènent au succès dans un monde où nous pourrions toujours savoir comment les choses vont se dérouler à l'avance. Mais la réalité est différente. Parfois, même les meilleurs plans échouent. L'improvisation n'est pas seulement une échappatoire, c'est une compétence. Elle permet aux entreprises de réagir rapidement, de saisir des opportunités inattendues et de pivoter lorsque cela est nécessaire. Les entreprises qui embrassent l'adaptabilité prospèrent souvent dans des environnements dynamiques."}
-        </p>
-      </div>
-    </div>
-
-    <div className="px-3 col-12 col-md-4 mb-4">
-      <div className="border-end text-start card-sm" data-aos="zoom-in" data-aos-delay="200">
-        <h4>{language === "en" ? "The Art of DesignOps" : "L'Art du DesignOps"}</h4>
-        <p>
-          {language === "en"
-            ? "What is DesignOps? Design Operations enables creative teams to focus on what’s important: developing innovative and impactful ways to help clients accomplish their goals. It bridges the gap between design and development, streamlining workflows, improving collaboration, and ensuring consistency. Companies investing in DesignOps benefit from faster iteration cycles, higher-quality products, and smoother project execution. This practice is key to maintaining efficiency in fast-moving industries."
-            : "Qu'est-ce que le DesignOps ? Les opérations de design permettent aux équipes créatives de se concentrer sur l'essentiel : développer des moyens innovants et percutants pour aider les clients à atteindre leurs objectifs. Cela comble le fossé entre le design et le développement, rationalisant les flux de travail, améliorant la collaboration et assurant la cohérence. Les entreprises investissant dans le DesignOps bénéficient de cycles d'itération plus rapides, de produits de meilleure qualité et d'une exécution de projet plus fluide. Cette pratique est essentielle pour maintenir l'efficacité dans les industries en évolution rapide."}
-        </p>
-      </div>
-    </div>
-
-    <div className="px-3 col-12 col-md-4 mb-4">
-      <div className="text-start card-sm" data-aos="zoom-in" data-aos-delay="400">
-        <h4>{language === "en" ? "Building effective organizational culture" : "Construire une culture organisationnelle efficace"}</h4>
-        <p>
-          {language === "en"
-            ? "Organizational culture is the backbone of any company. It affects employee morale, client satisfaction, and ultimately, success. Building an effective culture involves fostering open communication, promoting collaboration, and supporting continuous learning and innovation. Organizations with strong cultures attract top talent, enhance employee retention, and boost productivity. A well-crafted culture gives companies the agility to thrive in competitive markets."
-            : "La culture organisationnelle est l'épine dorsale de toute entreprise. Elle affecte le moral des employés, la satisfaction des clients et, en fin de compte, le succès. Construire une culture efficace implique de favoriser la communication ouverte, de promouvoir la collaboration et de soutenir l'apprentissage continu et l'innovation. Les organisations avec une culture forte attirent les meilleurs talents, améliorent la rétention des employés et augmentent la productivité. Une culture bien pensée donne aux entreprises l'agilité nécessaire pour prospérer sur des marchés compétitifs."}
+      {/* {cards.map((cards, index) => (  // Make sure index is defined here
+  <div key={index} className="col-12 col-md-4 d-flex justify-content-center">
+    <div 
+      className="card shadow-lg border-0 p-3 text-center h-100 d-flex flex-column"
+      style={{ backgroundColor: "white", color: "black", borderRadius: "12px" }}
+    >
+      <img 
+        src={cards.icon} 
+        alt={language === "en" ? cards.titleEn : cards.titleFr} 
+        className="card-img-top icon mx-auto" 
+      />
+      <div className="card-body d-flex flex-column">
+        <h4 className="card-title text-primary fw-bold">
+          {language === "en" ? cards.titleEn : cards.titleFr}
+        </h4>
+        <p className="card-text flex-grow-1 text-muted">
+          {language === "en" ? cards.textEn : cards.textFr}
         </p>
       </div>
     </div>
   </div>
-</div>
+))} */}
+
+
 
 {/* FORM SECTION */}
 <ContactForm/>
+ {/* Cards Section */}
+ <div className="container py-5">
+  <div className="row g-4 justify-content-center">
+    {cards.map((card, index) => (
+      <div key={index} className="col-12 col-md-4 d-flex justify-content-center">
+        <div 
+          className="card  shadow-lg border-0 p-3 text-center h-100 d-flex flex-column"
+          style={{ backgroundColor: "white", color: "black", borderRadius: "12px" }} // Inline CSS
+        >
+          <img 
+            src={card.icon} 
+            alt={language === "en" ? card.titleEn : card.titleFr} 
+            className="card-img-top icon mx-auto" 
+          />
+          <div className="card-body d-flex flex-column">
+            <h4 className="card-title text-primary fw-bold">
+              {language === "en" ? card.titleEn : card.titleFr}
+            </h4>
+            <p className="card-text flex-grow-1 text-muted">
+              {language === "en" ? card.textEn : card.textFr}
+            </p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
+
+     
+    <div className="container py-5">
+  <div className="row text-center justify-content-center">
+    {/* Feature 1 */}
+    <div className="col-12 col-md-4 mb-4">
+      <img src={icon1} alt="Growth Icon" style={{ width: "60px" }} className="mb-3" />
+      <h4 className="fw-bold">
+        {language === "fr" ? "Croissance Stratégique et Expansion" : "Strategic Growth and Expansion"}
+      </h4>
+      <p className="text-muted">
+        {language === "fr"
+          ? "Stimulez la croissance de votre entreprise avec une planification stratégique, une expansion ciblée et des partenariats solides pour atteindre vos objectifs."
+          : "Drive your business growth with strategic planning, targeted expansion, and strong partnerships to achieve your goals."}
+      </p>
+    </div>
+
+    {/* Feature 2 */}
+    <div className="col-12 col-md-4 mb-4">
+      <img src={icon2} alt="Efficiency Icon" style={{ width: "60px" }} className="mb-3" />
+      <h4 className="fw-bold">
+        {language === "fr" ? "Efficacité et Clarté" : "Efficiency and Clarity"}
+      </h4>
+      <p className="text-muted">
+        {language === "fr"
+          ? "Assurez la transparence et l’efficacité de votre entreprise grâce à une organisation experte, couvrant la gestion des processus et la coordination des départements pour une performance optimale."
+          : "Ensure transparency and efficiency in your business through expert organization, covering process management and department coordination for optimal performance."}
+      </p>
+    </div>
+
+    {/* Feature 3 */}
+    <div className="col-12 col-md-4 mb-4">
+      <img src={icon3} alt="Expertise Icon" style={{ width: "60px" }} className="mb-3" />
+      <h4 className="fw-bold">
+        {language === "fr" ? "Organisation Experte" : "Expert Organization"}
+      </h4>
+      <p className="text-muted">
+        {language === "fr"
+          ? "Optimisez votre entreprise avec une gestion experte de la comptabilité, de l’audit interne et du contrôle des stocks pour une performance exceptionnelle."
+          : "Optimize your business with expert management of accounting, internal auditing, and inventory control for exceptional performance."}
+      </p>
+    </div>
+  </div>
+</div>
+
+    
+      
+     {/* Other Sections  */}
+       <div className="financial-reports-section d-flex flex-wrap justify-content-center p-5 align-items-center">
+        <div className="col-12 col-md-6 mb-4">
+          <h3 className="fs-2 text-dark font-weight-bold text-center mb-4">
+            {language === "fr" ? "Rapports Financiers Précis et Ponctuels" : "Accurate and Timely Financial Reports"}
+          </h3>
+          <p className="fs-5 text-muted">
+            {language === "fr"
+              ? "Chez Le Stratégiste Consultancy Firm, nous reconnaissons que des rapports financiers précis et opportuns sont des outils essentiels pour évaluer la santé financière de votre entreprise, répondre aux obligations légales et réglementaires et soutenir la prise de décisions stratégiques."
+              : "At Le Stratégiste Consultancy Firm, we recognize that accurate and timely financial reports are essential tools for assessing your business's financial health, meeting legal and regulatory obligations, and supporting strategic decision-making."}
+          </p>
+        </div>
+        <div className="col-12 col-md-6">
+          <img src={pic10} alt="Financial Reports" className="w-100 rounded-3 shadow-lg" />
+        </div>
+      </div>
+
+    
       {/* Footer Section */}
-      <div 
-  className="d-flex flex-column flex-md-row justify-content-between align-items-center text-light p-4 mt-5"
-  style={{ background: "linear-gradient(135deg, #007bff, #6610f2)", borderRadius: "10px" }}
+     <div 
+       className="d-flex flex-column flex-md-row justify-content-between align-items-center text-light p-4 mt-5"
+
+       style={{ background: "navy", borderRadius: "10px", padding: "10px" }}
+       
+      >
+  <div className="w-100 w-md-50 mb-3  mb-md-0 text-center text-md-start">
+    <h4 className="mr-5">{language === "en" ? "Tailor-made solutions" : "Solutions sur mesure"}</h4>
+    <p 
+  className="text-light"
+  
 >
-  <div className="w-100 w-md-50 mb-3 mb-md-0 text-center text-md-start">
-    <h4>{language === "en" ? "Tailor-made solutions" : "Solutions sur mesure"}</h4>
-    <p className="text-light">
-      {language === "en"
-        ? "Our international expertise gives us the ability to create tailor-made solutions as unique as the companies we support."
-        : "Notre expertise internationale nous permet de créer des solutions sur mesure aussi uniques que les entreprises que nous accompagnons."}
-    </p>
+  {language === "en"
+    ? "Our international expertise gives us the ability to create tailor-made solutions as unique as the companies we support."
+    : "Notre expertise internationale nous permet de créer des solutions sur mesure aussi uniques que les entreprises que nous accompagnons."}
+</p>
+
   </div>
   
   <div className="w-100 w-md-50 d-flex justify-content-center justify-content-md-end">

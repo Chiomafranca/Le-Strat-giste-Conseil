@@ -26,42 +26,35 @@ const NavHeader = () => {
           </button>
 
           <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}>
-            <ul className="navbar-nav mx-auto flex-lg-row flex-column">
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/home">
-                  {language === "en" ? "Home" : "Accueil"}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/services">
-                  {language === "en" ? "Services" : "Services"}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/about">
-                  {language === "en" ? "About" : "À propos"}
-                </Link>
-              </li>
-            </ul>
+  <ul className="navbar-nav mx-auto flex-lg-row flex-column gap-lg-5 me-lg-5"> {/* Added gap-lg-5 */}
+    <li className="nav-item">
+      <Link className="nav-link text-light" to="/services">
+        {language === "en" ? "Services" : "Services"}
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link className="nav-link text-light" to="/about">
+        {language === "en" ? "About" : "À propos"}
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link className="nav-link text-light" to="/contact">
+        {language === "en" ? "Contact" : "Contact"}
+      </Link>
+    </li>
+  </ul>
 
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/contact">
-                  {language === "en" ? "Contact" : "Contact"}
-                </Link>
-              </li>
-            </ul>
+  {/* Language Buttons */}
+  <div className="language-buttons">
+    <button className="language-button" onClick={() => changeLanguage("en")}>
+      Anglais
+    </button>
+    <button className="language-button" onClick={() => changeLanguage("fr")}>
+      Français
+    </button>
+  </div>
+</div>
 
-            {/* Language Buttons */}
-            <div className="language-buttons">
-              <button className="language-button" onClick={() => changeLanguage("en")}>
-                Anglais
-              </button>
-              <button className="language-button" onClick={() => changeLanguage("fr")}>
-                Français
-              </button>
-            </div>
-          </div>
         </div>
       </nav>
     </>

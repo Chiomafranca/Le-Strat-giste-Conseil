@@ -44,36 +44,45 @@ const Services = () => {
   return (
     <>
       {/* Header Section */}
-      <div className="header-container">
-        <div className="brand-title">
-          {language === 'en' ? 'The Strategist' : 'Le Stratégiste'}
-        </div>
-
-        {/* Desktop Navbar */}
-        <div className="navbar-links d-none d-md-flex">
-          <Link to="/" className="text-white text-decoration-none">
-            {language === 'fr' ? 'Accueil' : 'Home'}
-          </Link>
-          <Link to="/services" className="text-white text-decoration-none">
-            {language === 'fr' ? 'Services' : 'Services'}
-          </Link>
-          <Link to="/about" className="text-white text-decoration-none">
-            {language === 'fr' ? 'À propos' : 'About'}
-          </Link>
-        </div>
-
-        {/* Contact Link */}
-        <div className="contact-link d-none d-md-block">
-          <Link to="/contact" className="text-white text-decoration-none">
-            {language === 'fr' ? 'Contact' : 'Contact'}
-          </Link>
-        </div>
-
-        {/* Mobile Navbar Toggle Button */}
-        <button className="navbar-toggler d-md-none" onClick={toggleMenu}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      </div>
+            <nav className="navbar navbar-expand-lg bg-dark">
+          <div className="container-fluid d-flex justify-content-between">
+            {/* Brand */}
+            <Link to="/" className="navbar-brand text-light">Le Stratégiste</Link>
+        
+            {/* Toggler Button */}
+            <button 
+              className="navbar-toggler" 
+              type="button" 
+              onClick={toggleMenu}
+              aria-controls="navbarNav"
+              aria-expanded={isMenuOpen ? "true" : "false"}
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+        
+            {/* Navbar Links */}
+            <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarNav">
+              <ul className="navbar-nav ms-auto d-flex flex-lg-row flex-column gap-2 gap-lg-5">
+                <li className="nav-item">
+                  <Link className="nav-link text-light" to="/services">
+                    {language === 'en' ? 'Services' : 'Services'}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-light" to="/about">
+                    {language === 'en' ? 'About' : 'À propos'}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-light" to="/contact">
+                    {language === 'en' ? 'Contact' : 'Contact'}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
       {/* Mobile Menu */}
       <ul className={`list-unstyled d-md-none ${isMenuOpen ? 'show' : 'd-none'}`} id="mobile-menu">

@@ -9,8 +9,8 @@ ul {
 
 .scrolling-navbar {
   display: flex;
-  background: linear-gradient(to right, rgb(30, 144, 255), rgb(138, 43, 226)); 
-
+  background: linear-gradient(to right, #00008B, #800080); /* Dark Blue to Purple */
+  
   color: white;
   padding: 10px 15px; 
   justify-content: center;
@@ -19,8 +19,9 @@ ul {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  font-size: 14px; 
+  font-size: 14px;
 }
+
 
 
 .scrolling-navbar ul {

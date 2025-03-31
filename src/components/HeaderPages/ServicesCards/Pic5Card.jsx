@@ -13,42 +13,45 @@ const Pic5Card = () => {
   return (
     <div>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg bg-dark">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand text-light">Le Stratégiste</Link>
-          <button className="navbar-toggler" type="button" onClick={toggleMenu}>
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}>
-            <ul className="navbar-nav mx-auto flex-lg-row flex-column">
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/home">
-                  {language === 'en' ? 'Home' : 'Accueil'}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/services">
-                  {language === 'en' ? 'Services' : 'Services'}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/about">
-                  {language === 'en' ? 'About' : 'À propos'}
-                </Link>
-              </li>
-            </ul>
-
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/contact">
-                  {language === 'en' ? 'Contact' : 'Contact'}
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav className="navbar navbar-expand-lg bg-dark">
+                <div className="container-fluid d-flex justify-content-between">
+                  {/* Brand */}
+                  <Link to="/" className="navbar-brand text-light">Le Stratégiste</Link>
+              
+                  {/* Toggler Button */}
+                  <button 
+                    className="navbar-toggler" 
+                    type="button" 
+                    onClick={toggleMenu}
+                    aria-controls="navbarNav"
+                    aria-expanded={isMenuOpen ? "true" : "false"}
+                    aria-label="Toggle navigation"
+                  >
+                    <span className="navbar-toggler-icon"></span>
+                  </button>
+              
+                  {/* Navbar Links */}
+                  <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`} id="navbarNav">
+                    <ul className="navbar-nav ms-auto d-flex flex-lg-row flex-column gap-2 gap-lg-5">
+                      <li className="nav-item">
+                        <Link className="nav-link text-light" to="/services">
+                          {language === 'en' ? 'Services' : 'Services'}
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link text-light" to="/about">
+                          {language === 'en' ? 'About' : 'À propos'}
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link text-light" to="/contact">
+                          {language === 'en' ? 'Contact' : 'Contact'}
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
 
       {/* Performance vs Risk Section */}
       <div className="container py-5">
