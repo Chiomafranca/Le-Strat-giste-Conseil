@@ -1,0 +1,27 @@
+.test-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    overflow: hidden;   
+  }
+  
+  .test-card img {
+    height: 200px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .test-card:hover img {
+    transform: scale(1.05);
+  }
+  
+
+  .test-card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .test-card:hover {
+    transform: translateY(-10px); 
+  }
+  

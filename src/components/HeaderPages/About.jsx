@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import pic14 from "../HeaderPages/images/pic14.png";
 import pic15 from "../HeaderPages/images/pic15.webp";
-import pic16 from '../HeaderPages/images/pic16.jpeg'
+import pic16 from '../HeaderPages/images/pic16.jpeg';
+import { useLanguage } from "../SetLanguage/LanguageContext"; // Import the useLanguage hook
+import './About.css'; // Import the CSS for hover effect
 
 const About = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language } = useLanguage(); // Get the current language
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,9 +17,11 @@ const About = () => {
   return (
     <div>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg  bg-dark">
+      <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand text-light">Le Stratégiste</Link>
+          <Link to="/" className="navbar-brand text-light">
+            {language === 'en' ? 'The Strategist' : 'Le Stratégiste'}
+          </Link>
 
           <button className="navbar-toggler" type="button" onClick={toggleMenu}>
             <span className="navbar-toggler-icon"></span>
@@ -25,19 +30,27 @@ const About = () => {
           <div className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}>
             <ul className="navbar-nav mx-auto flex-lg-row flex-column">
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/home">Accueil</Link>
+                <Link className="nav-link text-light" to="/home">
+                  {language === 'en' ? 'Home' : 'Accueil'}
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/services">Services</Link>
+                <Link className="nav-link text-light" to="/services">
+                  {language === 'en' ? 'Services' : 'Services'}
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/about">À propos</Link>
+                <Link className="nav-link text-light" to="/about">
+                  {language === 'en' ? 'About' : 'À propos'}
+                </Link>
               </li>
             </ul>
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link text-light" to="/contact">Contact</Link>
+                <Link className="nav-link text-light" to="/contact">
+                  {language === 'en' ? 'Contact' : 'Contact'}
+                </Link>
               </li>
             </ul>
           </div>
@@ -48,142 +61,104 @@ const About = () => {
       <div className="py-5" style={{ backgroundColor: "#f8f9fa", color: "#333" }}>
         {/* Section Header */}
         <div className="text-center mb-5">
-          <h1 className="fw-bold" style={{ fontSize: "2.5rem", color: "#0d6efd" }}>À Propos de Nous</h1>
-          <h5 className="text-muted">L’Excellence au Service de Vos Finances et de Votre Gestion</h5>
+          <h1 className="fw-bold" style={{ fontSize: "2.5rem", color: "#0d6efd" }}>
+            {language === 'en' ? 'About Us' : 'À Propos de Nous'}
+          </h1>
+          <h5 className="text-muted">
+            {language === 'en' ? 'Excellence in Your Finances and Management' : 'L’Excellence au Service de Vos Finances et de Votre Gestion'}
+          </h5>
         </div>
 
         {/* Content Section (Text + Image) */}
-        {/* Content Section (Text + Image) */}
-<div className="container">
-  <div className="row justify-content-center align-items-stretch">
-    
-    {/* Left: Text */}
-    <div className="col-lg-6 col-md-10 d-flex align-items-stretch">
-      <div className="p-4 bg-white rounded shadow w-100 d-flex flex-column justify-content-center h-100">
-        <p className="fs-5" style={{ lineHeight: "1.8" }}>
-          <strong>Les Stratégistes Conseil</strong> est un cabinet de conseil stratégique qui aide les organisations 
-          à naviguer dans la complexité et à atteindre un succès durable grâce à une expertise approfondie et des approches 
-          innovantes. Nous favorisons des <span className="fw-bold text-primary">partenariats collaboratifs</span>, des analyses 
-          basées sur les données et des solutions personnalisées pour maximiser votre performance.
-        </p>
-      </div>
-    </div>
+        <div className="container">
+          <div className="row justify-content-center align-items-stretch">
+            {/* Left: Text */}
+            <div className="col-lg-6 col-md-10 d-flex align-items-stretch">
+              <div className="p-4 bg-white rounded shadow w-100 d-flex flex-column justify-content-center h-100">
+                <p className="fs-5" style={{ lineHeight: "1.8" }}>
+                  <strong>{language === 'en' ? 'The Strategists Consulting' : 'Les Stratégistes Conseil'}</strong>
+                  {language === 'en' ? 'is a strategic consulting firm that helps organizations navigate complexity and achieve sustainable success through deep expertise and innovative approaches.' : 
+                  'est un cabinet de conseil stratégique qui aide les organisations à naviguer dans la complexité et à atteindre un succès durable grâce à une expertise approfondie et des approches innovantes.'} 
+                  {language === 'en' ? 'We foster collaborative partnerships, data-driven analysis, and customized solutions to maximize your performance.' : 'Nous favorisons des partenariats collaboratifs, des analyses basées sur les données et des solutions personnalisées pour maximiser votre performance.'}
+                </p>
+              </div>
+            </div>
 
-    {/* Right: Image */}
-    <div className="col-lg-6 col-md-10 d-flex align-items-stretch">
-      <img src={pic14} alt="Finance Strategy" className="img-fluid rounded shadow w-100 h-100 object-fit-cover" />
-    </div>
-
-  </div>
-</div>
-
+            {/* Right: Image */}
+            <div className="col-lg-6 col-md-10 d-flex align-items-stretch">
+              <img src={pic14} alt="Finance Strategy" className="img-fluid rounded shadow w-100 h-100 object-fit-cover" />
+            </div>
+          </div>
+        </div>
 
         {/* Mission Section */}
-       {/* Mission Section */}
-<div className="container mt-5">
-  <div className="row align-items-center">
-    {/* Left: Image */}
-    <div className="col-lg-5 col-md-10 text-center mb-4 mb-lg-0">
-      <img src={pic15} alt="Mission" className="img-fluid rounded shadow-lg w-100" />
-    </div>
-
-    {/* Right: Mission Content */}
-    <div className="col-lg-7 col-md-10">
-      <h3 className="fw-bold text-primary text-center text-lg-start">Notre Mission</h3>
-      
-      <div className="d-flex flex-wrap gap-3 mt-3">
-        <div className="w-100 w-md-50">
-          ✅ <strong>Stratégies sur Mesure:</strong> Alignement avec le marché.
-        </div>
-        <div className="w-100 w-md-50">
-          ✅ <strong>Excellence Opérationnelle:</strong> Optimisation des performances.
-        </div>
-        <div className="w-100 w-md-50">
-          ✅ <strong>Clarté Financière:</strong> Décisions éclairées grâce à des données précises.
-        </div>
-        <div className="w-100 w-md-50">
-          ✅ <strong>Développement des Talents:</strong> Constitution d’équipes performantes.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-        {/* Services Section */}
         <div className="container mt-5">
-          <h3 className="text-center fw-bold text-primary mb-4">Nos Services</h3>
-          <div className="row g-4">
-            {/* Service 1 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100">
-                <h5 className="fw-bold">📊 Conseil Financier</h5>
-                <p>Planification & analyse, budgétisation, optimisation des coûts, gestion des risques.</p>
-              </div>
+          <div className="row align-items-center">
+            {/* Left: Image */}
+            <div className="col-lg-5 col-md-10 text-center mb-4 mb-lg-0">
+              <img src={pic15} alt="Mission" className="img-fluid rounded shadow-lg w-100" />
             </div>
 
-            {/* Service 2 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100">
-                <h5 className="fw-bold">⚙️ Amélioration Opérationnelle</h5>
-                <p>Optimisation des processus, gestion de la performance, Lean Six Sigma.</p>
-              </div>
-            </div>
+            {/* Right: Mission Content */}
+            <div className="col-lg-7 col-md-10">
+              <h3 className="fw-bold text-primary text-center text-lg-start">
+                {language === 'en' ? 'Our Mission' : 'Notre Mission'}
+              </h3>
 
-            {/* Service 3 */}
-            <div className="col-md-4">
-              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100">
-                <h5 className="fw-bold">👥 Capital Humain</h5>
-                <p>Acquisition & développement des talents, transformation culturelle.</p>
+              <div className="d-flex flex-wrap gap-3 mt-3">
+                <div className="w-100 w-md-50">
+                  ✅ <strong>{language === 'en' ? 'Custom Strategies' : 'Stratégies sur Mesure'}:</strong> {language === 'en' ? 'Market alignment' : 'Alignement avec le marché'}.
+                </div>
+                <div className="w-100 w-md-50">
+                  ✅ <strong>{language === 'en' ? 'Operational Excellence' : 'Excellence Opérationnelle'}:</strong> {language === 'en' ? 'Performance optimization' : 'Optimisation des performances'}.
+                </div>
+                <div className="w-100 w-md-50">
+                  ✅ <strong>{language === 'en' ? 'Financial Clarity' : 'Clarté Financière'}:</strong> {language === 'en' ? 'Informed decision-making with accurate data' : 'Décisions éclairées grâce à des données précises'}.
+                </div>
+                <div className="w-100 w-md-50">
+                  ✅ <strong>{language === 'en' ? 'Talent Development' : 'Développement des Talents'}:</strong> {language === 'en' ? 'Building high-performing teams' : 'Constitution d’équipes performantes'}.
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="container text-center mt-5">
-          <h3 className="fw-bold text-primary">Pourquoi Nous Choisir?</h3>
-          <p className="mx-auto mt-3" style={{ maxWidth: "700px", lineHeight: "1.8" }}>
-            Nous combinons <strong>innovation, expertise et excellence</strong> pour vous offrir des solutions 
-            personnalisées qui garantissent votre succès dans un monde en perpétuelle évolution.
-          </p>
+        {/* Services Section */}
+        <div className="container mt-5">
+          <h3 className="text-center fw-bold text-primary mb-4">
+            {language === 'en' ? 'Our Services' : 'Nos Services'}
+          </h3>
+          <div className="row g-4">
+            {/* Service 1 */}
+            <div className="col-md-4">
+              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100 card-hover">
+                <h5 className="fw-bold">{language === 'en' ? 'Financial Consulting' : 'Conseil Financier'}</h5>
+                <p>{language === 'en' ? 'Planning & analysis, budgeting, cost optimization, risk management' : 'Planification & analyse, budgétisation, optimisation des coûts, gestion des risques'}</p>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="col-md-4">
+              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100 card-hover">
+                <h5 className="fw-bold">{language === 'en' ? 'Market Strategy' : 'Stratégie de Marché'}</h5>
+                <p>{language === 'en' ? 'Competitive analysis, go-to-market strategies, market expansion' : 'Analyse concurrentielle, stratégies de mise sur le marché, expansion du marché'}</p>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="col-md-4">
+              <div className="p-4 bg-white rounded shadow text-center d-flex flex-column justify-content-between h-100 card-hover">
+                <h5 className="fw-bold">{language === 'en' ? 'Operational Optimization' : 'Optimisation Opérationnelle'}</h5>
+                <p>{language === 'en' ? 'Process improvement, supply chain optimization, lean management' : 'Amélioration des processus, optimisation de la chaîne d’approvisionnement, gestion lean'}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="container my-5">
-  <div className="d-flex flex-column flex-lg-row align-items-center justify-content-between p-5 rounded shadow-lg" 
-       style={{ background: "linear-gradient(135deg, #0d6efd, #6610f2)", color: "#fff" }}>
-    
-    {/* Left: Text Content */}
-    <div className="text-center text-lg-start mb-4 mb-lg-0">
-  <h3 className="fw-bold" style={{ fontSize: "2rem", lineHeight: "1.5" }}>
-    Prêt à faire passer votre entreprise au niveau supérieur ?
-  </h3>
-  <p className="mt-3" style={{ fontSize: "1.2rem" }}>
-    Découvrez de nouvelles opportunités de croissance grâce à nos solutions expertes.
-  </p>
-  <Link to="/solutions">
-      <button className="btn btn-light fw-bold mt-3 px-4 py-2">
-  
-         Nos Solutions  
-    </button>
-  </Link>
-  
-</div>
-
-
-    {/* Right: Image */}
-    <div>
-      <img 
-        src={pic16} 
-        alt="Business Growth" 
-        className="img-fluid rounded-circle shadow-lg w-100" 
-        style={{ maxWidth: "350px", height: "auto" }} 
-      />
-    </div>
-
-  </div>
-</div>
-
+        {/* Footer */}
+        <footer className="bg-dark text-light py-4 text-center mt-4">
+          <p>{language === 'en' ? '© 2025 The Strategists Consulting' : '© 2025 Les Stratégistes Conseil'}</p>
+        </footer>
       </div>
     </div>
   );

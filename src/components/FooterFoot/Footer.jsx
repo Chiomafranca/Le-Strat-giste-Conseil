@@ -1,52 +1,76 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { useLanguage } from '../SetLanguage/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
-    return (
-       <>
-            <div className="container-fluid footer py-3"> 
-            <div className="row justify-content-center mt-5">
-            <div className="col-6 col-sm-3">
-    <ul className="list-unstyled d-flex flex-column align-items-center">
-        <li><h5 className="no-wrap">Le Consultant Stratégique</h5></li>
-        <li className="text-center wrap-text">
-            Votre Partenaire de Confiance en Finance et en Affaires
-        </li>
-    </ul>
-</div>
+  const { language } = useLanguage();
 
-<div className="col-6 col-sm-3">
-                    <ul className="list-unstyled d-flex flex-column align-items-center">
-                        <li><h5>À Propos</h5></li>
-                        <li><Link to="/team" className="footer-link">Équipe</Link></li>
-                        <li><Link to="/history" className="footer-link">Histoire</Link></li>
-                        <li><Link to="/careers" className="footer-link">Carrières</Link></li>
-                    </ul>
-                </div>
-
-                <div className="col-6 col-sm-3">
-                    <ul className="list-unstyled d-flex flex-column align-items-center">
-                        <li><h5>Confidentialité</h5></li>
-                        <li><Link to="/privacy-policy" className="footer-link">Politique de Confidentialité</Link></li>
-                        <li><Link to="/terms" className="footer-link">Termes et Conditions</Link></li>
-                        <li><Link to="/contact" className="footer-link">Contactez-nous</Link></li>
-                    </ul>
-                </div>
-
-                <div className="col-6 col-sm-3">
-                    <ul className="list-unstyled d-flex flex-column align-items-center">
-                        <li><h5>Réseaux Sociaux</h5></li>
-                        <li><a href="https://www.facebook.com/profile.php?id=61571482403972&mibextid=ZbWKwL" className="footer-link" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://x.com/lestrategistee" className="footer-link" target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
-                        <li><a href="https://www.linkedin.com/company/105976183/admin/dashboard/" className="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="https://www.instagram.com/le_strategiste_conseil?igsh=MWI0MGk4ZHNwaDV1YQ==" className="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                   </ul>
-                </div>
-            </div>
+  return (
+    <div className="footer">
+      <div className="footer-container">
+        {/* Text on the left side */}
+        <div className="footer-text">
+          <p>
+            {language === 'fr'
+              ? 'Contactez-nous dès maintenant pour profiter d’une consultation gratuite !'
+              : 'Contact us now to get a free consultation!'}
+          </p>
         </div>
-       </>
-    );
-}
+
+        {/* Social Media Links on the right side */}
+        <div className="footer-social-media">
+          <a
+            href="https://www.facebook.com/profile.php?id=61571482403972&mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="facebook"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://x.com/lestrategistee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="twitter"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/105976183/admin/dashboard/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="linkedin"
+          >
+            <FaLinkedinIn />
+          </a>
+          <a
+            href="https://www.instagram.com/le_strategiste_conseil?igsh=MWI0MGk4ZHNwaDV1YQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="instagram"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp"
+          >
+            <FaWhatsapp />
+          </a>
+        </div>
+      </div>
+
+      {/* Additional Paragraph text */}
+      <p className="footer-bottom">
+        {language === 'fr'
+          ? '© 2025 Le Strategiste Conseil - Tous droits réservés'
+          : '© 2025 Le Strategiste Conseil - All Rights Reserved'}
+      </p>
+    </div>
+  );
+};
 
 export default Footer;

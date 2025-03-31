@@ -1,21 +1,46 @@
-/* General Styles for Navbar */
-.home-nav-header {
-  position: relative;
+/* Navbar styles */
+.home-nav {
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
+  margin: 0;
+  padding: 0;
+  transition: margin-top 0.3s ease-in-out;
 }
 
-.home-nav-header h1 {
-  font-size: 2rem;
+.home-nav-item {
+  margin: 0 20px;
+}
+
+.home-nav-link {
+  text-decoration: none;
   color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.home-nav-header .header-text-right {
-  margin-left: auto;
+.home-nav-link:hover {
+  color: #00bcd4;
 }
 
+
+.home-nav.d-none {
+  display: none;
+}
+
+
+.home-nav.d-flex {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0.9);
+  z-index: 10;
+}
+
+/* Hamburger Icon */
 .home-navbar-toggler {
   background: none;
   border: none;
@@ -35,50 +60,6 @@
   margin: 5px 0;
 }
 
-/* Navbar items for small screens */
-.home-nav {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.home-nav-item {
-  margin: 0 20px;
-}
-
-.home-nav-link {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.home-nav-link:hover {
-  color: #00bcd4;
-}
-
-/* For small screens, hide the nav items by default */
-.home-nav.d-none {
-  display: none;
-}
-
-/* Show the nav items in a column when the menu is open */
-.home-nav.d-flex {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 10;
-}
-
-.home-nav-item {
-  margin: 15px 0;
-}
-
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -89,6 +70,8 @@
   justify-content: center;
   text-align: center;
   color: white;
+  margin-top: 0; 
+  transition: margin-top 0.3s ease-in-out; 
 }
 
 .hero-text-overlay {
@@ -130,12 +113,17 @@
   opacity: 0.4;
 }
 
-/* Remove zoom hover effect */
+/* Remove bounce effect */
 .hero-image:hover {
-  transform: none; /* Remove zoom effect */
+  transform: none;
 }
 
-/* Responsive Styles for small screens */
+
+.hero-section.menu-open {
+  margin-top: 5px; 
+}
+
+/* Responsive */
 @media (max-width: 992px) {
   .home-nav-header h1 {
     font-size: 1.5rem;
@@ -146,7 +134,7 @@
   }
 
   .home-nav-header {
-    background-color: rgba(51, 51, 51, 0.7); 
+    background-color: rgba(51, 51, 51, 0.9);
   }
 
   .home-nav {
@@ -159,7 +147,6 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: rgba(51, 51, 51, 0.7); 
     width: 100%;
     padding: 20px;
   }
@@ -174,10 +161,10 @@
   }
 
   .hero-subheader {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .hero-description {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }

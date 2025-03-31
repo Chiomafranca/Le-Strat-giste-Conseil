@@ -6,12 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; 
-  background-color: #ADD8E6; 
+  gap: 8px;
+  background-color: #ADD8E6;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  padding: 4px 8px; 
-  transition: opacity 0.3s ease, visibility 0.3s ease; 
+  padding: 4px 8px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1050; /* Always on top of everything */
 }
 
 .tooltip-container {
@@ -20,7 +21,7 @@
 }
 
 .tooltip-wrapper.hidden {
-  visibility: hidden; 
+  visibility: hidden;
   opacity: 0;
 }
 
@@ -28,8 +29,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px; 
-  gap: 8px; 
+  padding: 6px;
+  gap: 8px;
   background-color: #ADD8E6;
   border: none;
   color: black;
@@ -37,43 +38,42 @@
 }
 
 .tooltip-icon {
-  font-size: 22px; 
+  font-size: 22px;
   color: black;
 }
 
 .tooltip-text {
-  font-size: 13px; 
+  font-size: 13px;
   color: black;
 }
 
 .dot-icon {
-  font-size: 18px; 
+  font-size: 18px;
   color: black;
-  margin-left: 8px; 
+  margin-left: 8px;
 }
 
 /* Modal Styling */
 .modal-dialog {
   max-width: 80%;
-  margin-top: 10vh; 
+  margin-top: 10vh;
 }
 
 .modal-content {
-  max-height: 400px; 
-  overflow: hidden; 
+  max-height: 400px;
+  overflow: hidden;
 }
 
 .modal-body {
-  max-height: 250px; 
-  overflow-y: auto; 
+  max-height: 250px;
+  overflow-y: auto;
   padding: 15px;
 }
-
 
 @media (max-width: 767px) {
   .modal-dialog {
       max-width: 90%;
-      margin-top: 5vh; 
+      margin-top: 5vh;
   }
 
   .modal-content {
@@ -81,6 +81,6 @@
   }
 
   .modal-body {
-      max-height: 200px; 
+      max-height: 200px;
   }
 }

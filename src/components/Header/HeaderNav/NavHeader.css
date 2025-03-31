@@ -1,16 +1,116 @@
-
-.navbar-light.bg-dark {
-  background-color: #343a40 !important;  
+/* Custom Navbar Background */
+.custom-navbar {
+  background-color: #343a40 !important; 
 }
 
-
 @media (max-width: 768px) {
-  .navbar-light.bg-dark {
-      background-color: rgba(52, 58, 64, 0.4) !important;  
+  .custom-navbar {
+    background-color: rgba(0, 0, 0, 0.3) !important; 
   }
 
-  
-  .navbar-light .navbar-nav .nav-link {
-      color: white !important;
+  .navbar-nav .nav-link {
+    color: white !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-navbar {
+    background-color: rgba(0, 0, 0, 0.4) !important; 
+  }
+}
+
+/* Ensure proper collapse behavior */
+.navbar-collapse {
+  overflow: hidden;
+}
+
+/* Navbar items margin fixes */
+.navbar-nav.flex-lg-row > li {
+  margin-right: 20px;
+}
+
+.navbar-nav.flex-lg-row > li:last-child {
+  margin-right: 0;
+}
+
+.navbar-toggler {
+  border: none !important;  
+  outline: none !important;  
+  box-shadow: none !important;  
+  background: transparent !important; 
+  padding: 0 !important; 
+}
+
+.navbar-toggler-icon {
+  width: 30px;  
+  height: 24px;  
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after,
+.navbar-toggler-icon span {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;  
+}
+
+.navbar-toggler-icon span {
+  top: 50%;  
+  transform: translateY(-50%);
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;  
+}
+
+.language-buttons {
+  display: flex;
+  gap: 15px;
+  margin-left: auto; 
+  align-items: center;
+}
+
+.language-button {
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.language-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.language-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .language-button {
+    padding: 4px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-button {
+    padding: 2px 8px;
+    font-size: 12px;
   }
 }
